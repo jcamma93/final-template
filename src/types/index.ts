@@ -5,16 +5,16 @@ export interface Categories {
     name: string;
 }
 
-export interface Books {
-    id: number,
+export interface Book {
+    id?: number,
     categoryid: Categories["id"],
     title: string,
     author: string,
     price: number,
-    created_at: string | Date;
+    created_at?: string | Date;
 }
 
-export interface BookWithCategory extends Books {
+export interface BookWithCategory extends Book {
     name: Categories["name"]
 }
 
