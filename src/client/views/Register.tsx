@@ -11,7 +11,7 @@ const Register = (props: RegisterProps) => {
 
     const handleRegister = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        apiService('/auth/register', 'POST', { email, password })
+        apiService('/auth/register', 'POST', { name, email, password })
             .then(token => {
                 localStorage.setItem(TOKEN_KEY, token);
                 navigate('/pizza');
