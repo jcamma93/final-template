@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PrivateRoute from './components/PrivateRoute';
 import Login from './views/Login';
 import Register from './views/Register';
+import Create from './views/Create';
 
 import Navbar from './components/Navbar';
 import Books from './views/Books';
