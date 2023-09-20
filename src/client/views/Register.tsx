@@ -7,6 +7,7 @@ const Register = (props: RegisterProps) => {
     const navigate = useNavigate();
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const [name, setName] = useState<string>('');
 
     const handleRegister = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
@@ -24,6 +25,8 @@ const Register = (props: RegisterProps) => {
                 <div className='col-12 col-md-4'>
                     <h1 className='text-center text-light'>Register</h1>
                     <form className='form-group border rounded shadow p-4'>
+                    <label className='text-light' htmlFor="email">Email</label>
+                        <input type='name'  className='form-control mb-2' value={name} onChange={e => setName(e.target.value)} />
                         <label className='text-light' htmlFor="email">Email</label>
                         <input type='email' autoComplete='email' className='form-control mb-2' value={email} onChange={e => setEmail(e.target.value)} />
 

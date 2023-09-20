@@ -3,13 +3,14 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { apiService } from '../services/api-service';
+import { Category } from '../../types';
 
 const Create = () => {
     const { id } = useParams();
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
     const [price, setPrice] = useState("");
-    const [categories, setCategories] = useState("");
+    const [categories, setCategories] = useState<Category[]>([]);
     const [selectedCatagory, setSelectedCategory] = useState("");
     const nav = useNavigate();
 
@@ -51,9 +52,14 @@ const Create = () => {
                     <textarea value={author} onChange={e => setAuthor(e.target.value)} className="form-control" />
                     <label className='text-info'>Price</label>
                     <textarea value={price} onChange={e => setPrice(e.target.value)} className="form-control" />
-
-                    <button disabled={!title || !author || !price} onClick={handleSubmit} className="btn btn-dark m-2">
-                        Add Blog
+                <select value={selectedCatagory} onChange={(e) => setSelectedCategory(e.target.value)}>
+                <option value={"0"}>Please choose one...</option>
+                {categories.map((c) => (
+                    <option value={c.id}>{c.name}</option>
+                ))}
+                </select>
+                    <button disabled={!title || !author || !price || selectedCatagory == "0"} onClick={handleSubmit} className="btn btn-dark m-2">
+                        Add Book
                     </button>
                 </form>
             </div>

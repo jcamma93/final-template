@@ -11,7 +11,7 @@ const SingleBook = () => {
     useEffect(() => {
         async function getBook() {
             try {
-                const res = await fetch('/api/book/' + id);
+                const res = await fetch('/api/books/' + id);
                 const data = await res.json();
 
                 if (res.ok) {
