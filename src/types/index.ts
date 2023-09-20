@@ -1,3 +1,7 @@
+import { Request } from "express";
+import { UsersTable } from "../server/db/models";
+
+
 // Book Interfaces
 
 export interface Category {
@@ -27,4 +31,15 @@ export interface User {
     role: string,
     created_at: string | Date;
     name: string;
+}
+
+// Auth Interfaces
+
+export interface ReqUser extends Request {
+    user?: UsersTable | Payload;
+}
+
+export interface Payload extends UsersTable {
+    userid?: number;
+    role?: number;
 }

@@ -8,7 +8,7 @@ const categoriesRouter = express.Router();
 categoriesRouter.get('/', async (req, res) => {
     try {
         const category = await categories.all();
-        res.json(categories);
+        res.json(category);
     } catch (error) {
         console.log(error);
         res.status(500).json({ message: "An unknown application error has occured" })

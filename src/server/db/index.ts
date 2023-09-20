@@ -14,3 +14,9 @@ export const Query = <T = any>(query: string, values?: any) => {
         });
     });
 };
+
+import users from './queries/users';
+
+export default {
+    users
+}
