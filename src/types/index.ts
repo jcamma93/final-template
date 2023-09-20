@@ -1,13 +1,13 @@
 // Book Interfaces
 
-export interface Categories {
+export interface Category {
     id: number,
     name: string;
 }
 
 export interface Book {
     id?: number,
-    categoryid: Categories["id"],
+    categoryid: Category["id"],
     title: string,
     author: string,
     price: number,
@@ -15,7 +15,7 @@ export interface Book {
 }
 
 export interface BookWithCategory extends Book {
-    name: Categories["name"]
+    name: Category["name"]
 }
 
 // User Interface

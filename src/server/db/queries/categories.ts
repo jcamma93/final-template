@@ -1,8 +1,8 @@
 import { Query } from "..";
-import { Categories } from "../../../types";
+import { Category } from "../../../types";
 
-const getAll = () => Query<Categories[]>('SELECT * FROM Categories');
-const getOne = (id: Categories['id']) => Query<Categories[]>('SELECT * FROM Categories WHERE id=?', [id]);
+const getAll = () => Query<Category[]>('SELECT * FROM Categories');
+const getOne = (id: Category['id']) => Query<Category[]>('SELECT * FROM Categories WHERE id=?', [id]);
 
 export default {
     all: getAll,
