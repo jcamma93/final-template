@@ -32,7 +32,7 @@ export async function apiService<T = any>(uri: string, method: string = 'GET', d
         }
 
         if (res.status === 401) {
-            throw new Error('no token, expired token, or server cold not validate token');
+            throw new Error('no token, expired token, or server could not validate token');
         }
 
         if (res.status === 404) {
@@ -49,7 +49,7 @@ export async function apiService<T = any>(uri: string, method: string = 'GET', d
 
 
     } catch (error) {
-        console.error('[error in spiService]', error.message);
+        console.error('[error in apiService]', error.message);
         throw error;
     }
 }

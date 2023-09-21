@@ -6,6 +6,8 @@ import Register from './views/Register';
 import Create from './views/Create';
 import SingleBook from './views/SingleBook';
 import Edit from './views/Edit';
+import Pizza from './views/Pizza';
+import Home from './views/Home';
 
 
 import Navbar from './components/Navbar';
@@ -18,7 +20,10 @@ const App = () => {
 		<Navbar />
 			<main className ="container my-5">
 			<Routes>
+			<Route path="/" element={<Home />} />
+
 				<Route path="/books" element={<Books />} />
+				<Route path="/pizza" element={<Pizza />} />
 				<Route path='/login' element={<Login />} />
 				<Route path='/register' element={<Register />} />
 				<Route path="/create" element={<Create />} />

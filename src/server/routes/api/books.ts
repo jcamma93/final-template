@@ -53,7 +53,7 @@ booksRouter.delete('/:id', async (req, res) => {
 booksRouter.post('/', async (req, res) => {
     const { title, author, price, categoryid } = req.body;
 
-    if (!title || !author || !price || !categoryid ) return res.status(400).json({ message: "All fields must contatin valid inputs"})
+    if (!title || !author || !price) return res.status(400).json({ message: "All fields must contatin valid inputs"})
 
     const newBook: Book = { title, author, price, categoryid}
     try {
@@ -71,7 +71,7 @@ booksRouter.put('/:id', async (req, res) => {
     
     const { title, author, price, categoryid } = req.body;
 
-    if (!title || !author || !price || !categoryid ) return res.status(400).json({ message: "All fields must contain valid info" })
+    if (!title || !author || !price) return res.status(400).json({ message: "All fields must contain valid info" })
 
     const updatedBook: Book = { title, author, price, categoryid };
 

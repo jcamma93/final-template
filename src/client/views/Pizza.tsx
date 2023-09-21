@@ -17,7 +17,7 @@ const Pizza = (props: PizzaProps) => {
 
     return (
         <div>
-            <h1 className='text-center display-1'>{pizzaTime?.message}</h1>
+            <h1 className='text-center display-1 text-secondary'>{pizzaTime?.message}</h1>
         </div>
     );
 };

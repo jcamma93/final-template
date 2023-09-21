@@ -15,7 +15,8 @@ const BookCard = ({ book, isSingle }: BookCardProps) => {
         <div onClick={handleNavigate} className={'col-12 col-md-5'}>
             <div className='card m-2 bg-light'>
                 <div className="card-title">Title:{book?.title}</div>
-                <div className="card-body">By: {book?.author}{book?.categoryid}
+                <div className="card-body">By: {book?.author} <br /> <br />
+                 Category id: {book?.categoryid}
                 </div>
                 <div className="card-footer">Price: {book?.price}</div>
                 {isSingle && (
